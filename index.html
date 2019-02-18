@@ -1,0 +1,122 @@
+<html>
+<header>
+    <title>AT&T - Audio & Video Chat App</title>
+    <script src="./kandy.js"></script>
+    <script src="./audio-video.js"></script>
+
+    <style>
+        li {
+    margin-bottom: 5px;
+    }
+    
+    .box {
+      border: 1px solid #333333;
+      height: 200px;
+      overflow-y: scroll;
+      scroll-behavior: smooth;
+      
+    }
+
+    .user-id {
+      width: 200px;
+    }
+    </style>
+
+</header>
+
+<body>
+    <div>
+
+        <h2>AT&T Audio & Video Chat App</h2>
+        <div>
+            <p><b>Authenticate using your account information</b></p>
+			Server URL: <input type="text" id="serverUrl" value="nvs-cpaas-oauth.kandy.io" /> <br>
+			
+			Password Grant <input type="radio" onclick="javascript:grantCheck();" name="grantCheck" id="passwordGrant"> 
+			Client Credentials <input type="radio" onclick="javascript:grantCheck();" name="grantCheck" id="clientCred"><br>			
+			
+		<div id="passwordID" style="display:none">
+            <ul>
+				
+                <li>Client ID:
+                    <input type='text' id='clientId' /></li>
+                <Li>User Email:
+                    <input type='text' id='userEmail' /></Li>
+                <Li>Password:
+                    <input type='password' id='password' /></Li>
+
+                <!-- Create the Login button with the action. -->
+                <p>
+                    <input type='button' value='Login' onclick='loginByPasswordGrant();' /><br>
+                </p>
+            </ul>
+		</div>
+	    <div id="clientCredID" style="display:none">
+			<ul>				
+                <li>Project Private Key:
+                    <input type='text' id='privateKey' /></li>
+                <Li>Project Private Secret:
+                    <input type='text' id='privateSecret' /></Li>
+				<p>
+                    <input type='button' value='Login' onclick='loginByClientCred();' /><br>
+                </p>
+            </ul>
+        </div>
+        <br>
+		</div>
+        <div>
+            <p><b>Subscribe To Call Service Websocket Channel</b></p>
+            <p><input type='button' value='Subscribe' onclick='subscribe();' /></p>
+        </div>
+
+        <br>
+        <div>
+            <p><b>Make a Call</b></p>
+            <!-- User input for making a call. -->
+            <p>
+                <input type='button' value='Make Call' onclick='makeCall();' />
+                to <input type='text' id='callee' />
+                with video <input type='checkbox' id='make-with-video' checked />
+            </p>
+            <i>e.g.: "sip:janedoe@somedomain.com" (sip:[userId]@[domain])</i>
+        </div>
+        <br>
+
+        <div>
+            <p><b>Respond to a Call</b></p>
+            <!-- User input for responding to an incoming call. -->
+            <p>
+                <input type='button' value='Answer Call' onclick='answerCall();' />
+                with video <input type='checkbox' id='answer-with-video' checked />
+                <input type='button' value='Reject Call' onclick='rejectCall();' />
+            </p>
+
+        </div>
+        <br>
+        <div>
+            <p><b>End a Call</b></p>
+            <p>
+                <!-- User input for ending an ongoing call. -->
+                <input type='button' value='End Call' onclick='endCall();' /></p>
+
+        </div>
+        <br>
+
+        <div>
+            <!-- Message output container. -->
+            <p><b>Messages</b></p>
+            <div id='messages' , class="box"></div>
+        </div>
+        <br>
+
+        <!-- Media containers. -->
+        <p><b> Remote video: </b></p>
+        <div id="remote-container"></div>
+        <br>
+
+        <p><b>Local video: </b></p>
+        <div id="local-container"></div>
+
+</body>
+
+</html>
