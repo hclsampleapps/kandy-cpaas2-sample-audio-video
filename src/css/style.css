@@ -1,0 +1,31 @@
+.hide {
+	display: none;
+}
+
+li {
+    margin-bottom: 5px;
+}
+
+input.long {
+    width: 300px;
+}
+
+ul.inline li {
+    display: inline;
+    margin-right: 10px;
+}
+
+.terminal-wrapper h4 {
+	border-bottom: 1px solid lightgrey;
+	display: block;
+}
+
+.terminal-wrapper div {
+	font-family: monospace;
+}
+
+.box {
+    background: slategrey;
+    width: 320px;
+    height: 280px;
+}
