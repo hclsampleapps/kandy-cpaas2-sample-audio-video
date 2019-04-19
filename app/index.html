@@ -1,9 +1,10 @@
 <!doctype html>
 <html>
-<header>
+
+<head>
     <title>Audio &amp; Video Chat App</title>
     <link rel="stylesheet" href="css/style.css">
-</header>
+</head>
 
 <body>
     <div>
@@ -49,11 +50,11 @@
                 <div id="clientCredID">
                     <ul>
                         <li>
-                            <label>Project Private Key:</label>
+                            <label>Private project key:</label>
                             <input type="text" id="privateKey" />
                         </li>
                         <li>
-                            <label>Project Private Secret:</label>
+                            <label>Private project secret:</label>
                             <input type="text" id="privateSecret" />
                         </li>
                     </ul>
@@ -63,13 +64,13 @@
         </div>
         <div>
             <h4>Subscribe To Call Service Websocket Channel</h4>
-            <p><input type="button" value="Subscribe" onclick="subscribe();" /></p>
+            <p><button type="button" onclick="subscribe()">Subscribe</button></p>
         </div>
         <!-- User input for making a call. -->
         <div>
             <h4>Make a Call</h4>
             <p>
-                <input type="button" value="Make Call" onclick="makeCall();" />
+                <button type="button" onclick="makeCall()">Make Call</button>
                 <label>to</label>
                 <input type="text" id="callee" class="long" placeholder="sip:janedoe@somedomain.com" title="e.g.,&#13;&bull; sip:[userId]@[domain]" />
                 <label>with video</label>
@@ -80,17 +81,17 @@
         <div>
             <h4>Respond to a Call</h4>
             <p>
-                <input type="button" value="Answer Call" onclick="answerCall();" />
+                <button type="button" onclick="answerCall()">Answer Call</button>
                 <label>with video</label>
                 <input type="checkbox" id="answer-with-video" checked />
-                <input type="button" value="Reject Call" onclick="rejectCall();" />
+                <button type="button" onclick="rejectCall()">Reject Call</button>
             </p>
         </div>
         <!-- User input for ending an ongoing call. -->
         <div>
             <h4>End a Call</h4>
             <p>
-                <input type="button" value="End Call" onclick="endCall();" />
+                <button type="button" onclick="endCall()">End Call</button>
             </p>
         </div>
         <!-- Media containers. -->
