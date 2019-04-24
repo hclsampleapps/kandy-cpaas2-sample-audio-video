@@ -1,4 +1,4 @@
-# kandy-cpaas2-audio-video
+# kandy-cpaas2-sample-audio-video
 
 ### Audio Video chat app
 
