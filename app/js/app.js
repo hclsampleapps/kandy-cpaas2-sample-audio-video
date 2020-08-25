@@ -68,18 +68,18 @@ function initClient() {
         }
       });
 
-    // Set listener for successful call starts.
-    client.on('call:start', function(params) {
-        log('Call successfully started. Waiting for response.')
-    })
+  // Set listener for successful call starts.
+  client.on('call:start', function(params) {
+      log('Call successfully started. Waiting for response.')
+  })
 
-    // Set listener for generic call errors.
-    client.on('call:error', function(params) {
-        log('Encountered error on call: ' + params.error.message)
-    })
+  // Set listener for generic call errors.
+  client.on('call:error', function(params) {
+      log('Encountered error on call: ' + params.error.message)
+  })
 
-    // Set listener for changes in a call's state.
-    client.on('call:stateChange', function(params) {
+  // Set listener for changes in a call's state.
+  client.on('call:stateChange', function(params) {
     // Retrieve call state.
     const call = client.call.getById(params.callId);
   
@@ -96,19 +96,19 @@ function initClient() {
     }
   });
 
-    // Set listener for incoming calls.
-    client.on('call:receive', function(params) {
-        // Keep track of the callId.
-        callId = params.callId
+  // Set listener for incoming calls.
+  client.on('call:receive', function(params) {
+     // Keep track of the callId.
+     callId = params.callId
 
-        // Retrieve call information.
-        call = client.call.getById(params.callId)
-        log('Received incoming call')
-    })
+     // Retrieve call information.
+     call = client.call.getById(params.callId)
+     log('Received incoming call')
+  })
 
     
-    // Listen for subscription changes.
-client.on("subscription:change", function() {
+  // Listen for subscription changes.
+  client.on("subscription:change", function() {
     if (
       client.services.getSubscriptions().isPending === false &&
       client.services.getSubscriptions().subscribed.length > 0
@@ -123,8 +123,8 @@ client.on("subscription:change", function() {
 
 
   
-// Set listener for new tracks.
-client.on('call:newTrack', function (params) {
+  // Set listener for new tracks.
+  client.on('call:newTrack', function (params) {
     // Check whether the new track was a local track or not.
     if (params.local) {
       // Only render local visual media into the local container.
