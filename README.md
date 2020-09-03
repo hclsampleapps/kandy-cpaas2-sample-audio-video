@@ -1,6 +1,6 @@
 # kandy-cpaas2-sample-audio-video
 
-### Audio Video chat app
+### Audio Video app
 
 This app is used to create communication channel between two users via Voice/Video APIs.
 
